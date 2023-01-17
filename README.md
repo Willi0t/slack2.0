@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+## Install instructions
+
+this is made using yarn classic. therefore you need to use yarn install and after that uppdate mui with yarn add @material-ui/core@next
+
 ## Available Scripts
 
 In the project directory, you can run:
