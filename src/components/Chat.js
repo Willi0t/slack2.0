@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import ChatInput from "./ChatInput";
 import Message from "./Message";
@@ -10,11 +10,12 @@ import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
 
 function Chat() {
+  const chatRef = useRef(0);
   const roomId = useSelector(selectRoomId); //pulling data drom redux store
   const [roomDetails] = useDocument(
     roomId && db.collection("rooms").doc(roomId)
   );
-  const [roomMessages] = useCollection(
+  const [roomMessages, loading] = useCollection(
     roomId &&
       db
         .collection("rooms")
@@ -22,8 +23,9 @@ function Chat() {
         .collection("messages")
         .orderBy("timestamp", "asc")
   );
-  console.log(roomDetails?.data());
-  console.log(roomMessages);
+  useEffect(() => {
+    chatRef?.current.scrollIntoView({ behavior: "smooth" }); // scrolls to the bottom in conjunction with ChatBottom
+  }, [roomId, loading]);
 
   return (
     <ChatContainer>
@@ -55,8 +57,14 @@ function Chat() {
               />
             );
           })}
+          <ChatBottom ref={chatRef} />{" "}
+          {/* scrolls to the bottom after you send a message */}
         </ChatMessages>
-        <ChatInput channelName={roomDetails?.data().name} channelId={roomId} />
+        <ChatInput
+          chatRef={chatRef}
+          channelName={roomDetails?.data().name}
+          channelId={roomId}
+        />
       </>
     </ChatContainer>
   );
@@ -72,6 +80,8 @@ const ChatContainer = styled.div`
 `;
 
 const ChatMessages = styled.div``;
+
+const ChatBottom = styled.div``;
 
 const Header = styled.div`
   display: flex;

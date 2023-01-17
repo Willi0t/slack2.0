@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { db } from "../firebase";
 import firebase from "firebase/compat/app";
 
-function ChatInput({ channelName, channelId }) {
+function ChatInput({ channelName, channelId, chatRef }) {
   const [input, setInput] = useState("");
   const sendMessage = (e) => {
     e.preventDefault(); // prevents refresh
@@ -18,6 +18,8 @@ function ChatInput({ channelName, channelId }) {
       user: "William Sinclair",
       userImage: "https://picsum.photos/200",
     }); // pushing message to backend
+
+    chatRef.current.scrollIntoView({ behavior: "smooth" }); //scrolls to the bottom after typed message
 
     setInput("");
   };
