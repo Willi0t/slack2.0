@@ -82,6 +82,10 @@ const HeaderSearch = styled.div`
     color: white;
   }
 
+  > input > ::placeholder {
+    color: white;
+  }
+
   > .MuiSvgIcon-root {
     color: white;
     opacity: 0.6;

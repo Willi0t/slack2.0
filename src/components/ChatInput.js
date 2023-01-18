@@ -73,6 +73,7 @@ const MainChatMessage = styled.div`
   min-height: 50px;
 
   > form > input {
+    margin-left: 10px;
     width: 100%;
     background: transparent;
     border: 0;
