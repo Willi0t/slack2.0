@@ -1,5 +1,5 @@
 import { Button } from "@material-ui/core";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { db, auth } from "../firebase";
 import firebase from "firebase/compat/app";

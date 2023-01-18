@@ -18,8 +18,9 @@ import AddIcon from "@mui/icons-material/Add";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 function SideBar() {
-  const [channels, loading, error] = useCollection(db.collection("rooms"));
+  const [channels] = useCollection(db.collection("rooms"));
   const [user] = useAuthState(auth);
+
   return (
     <SidebarContainer>
       <SidebarHeader>
@@ -27,7 +28,7 @@ function SideBar() {
           <h2>Hyper island learning</h2>
           <h3>
             <FiberManualRecordIcon />
-            William sinclair
+            {user.displayName}
           </h3>
         </SidebarInfo>
         <CreateIcon></CreateIcon>

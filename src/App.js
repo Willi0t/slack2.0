@@ -19,7 +19,7 @@ function App() {
     return (
       <AppLoading>
         <AppLoadingContents>
-          <img src={slackLogo} />
+          <img src={slackLogo} alt="Slack logo" />
           <Spinner name="ball-spin-fade-loader" color="purple" fadeIn="none" />
         </AppLoadingContents>
       </AppLoading>

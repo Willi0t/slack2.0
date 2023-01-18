@@ -12,7 +12,7 @@ function Login() {
   return (
     <LoginContainer>
       <LoginInnerContainer>
-        <img src={slackLogo}></img>
+        <img src={slackLogo} alt="slack logo"></img>
         <h1>Sign in to Slack Mockup</h1>
         <p>hyperisland</p>
         <button onClick={signIn}>Sign in with google</button>
