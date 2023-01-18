@@ -21,8 +21,8 @@ function Header() {
           <AccessTimeIcon />
         </HeaderLeft>
         <HeaderSearch>
+          <input placeholder="Search Hyper island" />
           <SearchIcon />
-          <input placeholder="Search" />
         </HeaderSearch>
         <HeaderRight>
           <HelpOutlineIcon />
@@ -52,6 +52,7 @@ const HeaderLeft = styled.div`
   margin-left: 20px;
 
   > .MuiSvgIcon-root {
+    opacity: 0.6;
     margin-left: auto;
     margin-right: 30px;
   }
@@ -67,21 +68,23 @@ const HeaderAvatar = styled(Avatar)`
 const HeaderSearch = styled.div`
   flex: 0.4;
   opacity: 1;
-  border-radius: 6px;
-  background-color: #421f44;
-  text-align: center;
   display: flex;
-  padding: 0 50px;
+  padding: 0 35px;
   color: gray;
-  border: 1px gray solid;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
 
   > input {
     background-color: transparent;
     border: none;
-    text-align: center;
-    min-width: 30vw;
+    min-width: 100%;
     outline: 0;
     color: white;
+  }
+
+  > .MuiSvgIcon-root {
+    color: white;
+    opacity: 0.6;
   }
 `;
 
@@ -91,6 +94,7 @@ const HeaderRight = styled.div`
   align-items: flex-end;
 
   > .MuiSvgIcon-root {
+    opacity: 0.6;
     margin-left: auto;
     margin-right: 20px;
   }
