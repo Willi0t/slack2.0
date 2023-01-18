@@ -81,7 +81,9 @@ const ChatContainer = styled.div`
 
 const ChatMessages = styled.div``;
 
-const ChatBottom = styled.div``;
+const ChatBottom = styled.div`
+  height: 180px;
+`;
 
 const Header = styled.div`
   display: flex;

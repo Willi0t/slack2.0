@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { db, auth } from "../firebase";
 import firebase from "firebase/compat/app";
 import { useAuthState } from "react-firebase-hooks/auth";
+import MainChatStyle from "./MainChatStyle";
+import MainChatAttachment from "./MainChatAttachment";
 
 function ChatInput({ channelName, channelId, chatRef }) {
   const [input, setInput] = useState("");
@@ -28,39 +30,55 @@ function ChatInput({ channelName, channelId, chatRef }) {
 
   return (
     <ChatInputContainer>
-      <form>
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder={`Message #${channelName}`}
-        />
-        <Button hidden type="submit" onClick={sendMessage}>
-          send
-        </Button>
-      </form>
+      <MainChatStyle />
+      <MainChatMessage>
+        <form>
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder={`Message #${channelName}`}
+          />
+          <Button hidden type="submit" onClick={sendMessage}>
+            send
+          </Button>
+        </form>
+      </MainChatMessage>
+      <MainChatAttachment />
     </ChatInputContainer>
   );
 }
 
 export default ChatInput;
-
 const ChatInputContainer = styled.div`
-  border-radius: 20px;
+  width: 87%;
+  position: fixed;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  margin-left: 20px;
+  border: solid;
+  border-width: thin;
+  border-color: #9e9e9e;
+  overflow: hidden;
 
-  > form {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
+  /* border-radius: 20px; */
+`;
+
+const MainChatMessage = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  min-height: 50px;
 
   > form > input {
-    position: fixed;
-    bottom: 30px;
-    width: 60%;
-    border: 1px solid gray;
-    border-radius: 3px;
-    padding: 20px;
+    width: 100%;
+    background: transparent;
+    border: 0;
     outline: none;
+    font-size: small;
+    color: #5e5e5e;
   }
 
   > form > button {
