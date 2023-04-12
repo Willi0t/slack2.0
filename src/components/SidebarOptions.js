@@ -16,7 +16,7 @@ function SidebarOptions({ Icon, title, addChannelOption, id }) {
 
   const selectChannel = () => {
     if (id) {
-      dispatch(enterRoom({ roomId: id }));
+      dispatch(enterRoom({ roomId: id })); //calling redux, checking if id is selcted and then entering room
     }
   };
 

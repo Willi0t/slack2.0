@@ -6,6 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 this is made using yarn classic. therefore you need to use yarn install and after that uppdate mui with yarn add @material-ui/core@next
 
+# link for site
+
+https://slack2-0-e2cfb.web.app
+https://harmonious-profiterole-fb7c9c.netlify.app/
+
 ## Available Scripts
 
 In the project directory, you can run:

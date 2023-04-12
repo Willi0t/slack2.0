@@ -15,6 +15,7 @@ function Chat() {
   const [roomDetails] = useDocument(
     roomId && db.collection("rooms").doc(roomId)
   );
+  //fetching data from backend
   const [roomMessages, loading] = useCollection(
     roomId &&
       db
@@ -26,14 +27,18 @@ function Chat() {
   useEffect(() => {
     chatRef?.current.scrollIntoView({ behavior: "smooth" }); // scrolls to the bottom in conjunction with ChatBottom
   }, [roomId, loading]);
-
+  // useEffect(() => {
+  //   console.log("mounted");
+  //   return () => console.log("unmount"); //checking when components mount
+  // }, []);
   return (
     <ChatContainer>
       <>
         <Header>
           <HeaderLeft>
             <h4>
-              <strong>#{roomDetails?.data().name}</strong>
+              <strong>#{roomDetails?.data().name}</strong>{" "}
+              {/* header title from backend */}
             </h4>
             <StarBorderIcon />
           </HeaderLeft>
@@ -55,7 +60,7 @@ function Chat() {
                 user={user}
                 userImage={userImage}
               />
-            );
+            ); //fetching data from backend maping through and displaying with input and saved google information
           })}
           <ChatBottom ref={chatRef} />{" "}
           {/* scrolls to the bottom after you send a message */}

@@ -18,8 +18,8 @@ import AddIcon from "@mui/icons-material/Add";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 function SideBar() {
-  const [channels] = useCollection(db.collection("rooms"));
-  const [user] = useAuthState(auth);
+  const [channels] = useCollection(db.collection("rooms")); //selecting the rooms
+  const [user] = useAuthState(auth); // google login in object information
 
   return (
     <SidebarContainer>
@@ -44,9 +44,9 @@ function SideBar() {
       <hr />
       <SidebarOptions Icon={ExpandMoreIcon} title="Channels" />
       <hr />
-      <SidebarOptions Icon={AddIcon} addChannelOption title="Add Channel" />
+       <SidebarOptions Icon={AddIcon} addChannelOption title="Add Channel" />  {/* passing propps to sidebarOption */}
       {channels?.docs.map((doc) => (
-        <SidebarOptions key={doc.id} id={doc.id} title={doc.data().name} />
+        <SidebarOptions key={doc.id} id={doc.id} title={doc.data().name} /> // ?=optional chainging.(if it exists use it. if not return undefined. this prevents app from chrashing if value is not defined) mapping through and rendering each document.
       ))}
     </SidebarContainer>
   );

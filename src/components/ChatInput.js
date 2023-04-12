@@ -50,13 +50,12 @@ function ChatInput({ channelName, channelId, chatRef }) {
 
 export default ChatInput;
 const ChatInputContainer = styled.div`
-  width: 87%;
-  position: fixed;
   bottom: 30px;
   display: flex;
   flex-direction: column;
   border-radius: 12px;
   margin-left: 20px;
+  margin-right: 20px;
   border: solid;
   border-width: thin;
   border-color: #9e9e9e;
