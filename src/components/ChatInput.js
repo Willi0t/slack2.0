@@ -50,6 +50,7 @@ function ChatInput({ channelName, channelId, chatRef }) {
 
 export default ChatInput;
 const ChatInputContainer = styled.div`
+  min-width: 400px;
   bottom: 30px;
   display: flex;
   flex-direction: column;

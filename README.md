@@ -9,7 +9,7 @@ this is made using yarn classic. therefore you need to use yarn install and afte
 # link for site
 
 https://slack2-0-e2cfb.web.app
-https://harmonious-profiterole-fb7c9c.netlify.app/
+https://mellifluous-sawine-7134b3.netlify.app
 
 ## Available Scripts
 
