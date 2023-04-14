@@ -84,7 +84,9 @@ const ChatContainer = styled.div`
   margin-top: 60px;
 `;
 
-const ChatMessages = styled.div``;
+const ChatMessages = styled.div`
+  min-height: 75vh;
+`;
 
 const ChatBottom = styled.div`
   height: 180px;
